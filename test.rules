@@ -1,2 +1,2 @@
-alert tcp any any -> any 3399(pcre:"m/login|Initial/";flow:established;flowbits:set,bot;flowbits:noalert;sid:1000002;rev:1;)
-alert tcp any any -> any 3399(pcre:"m/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\:([0-9]|[1-9]\d{1,3}|[1-5]\d{4}|6[0-5]{2}[0-3][0-5]/";flow:established;flowbits:isset,bot;msg:"bot founded";sid:1000001;rev:1;)
+alert tcp any any -> any 3399 (pcre:"/login|Initial/";flow:established;flowbits:set,bot;flowbits:noalert;sid:1000003;rev:1;)
+alert tcp any any -> any 3399 (pcre:"/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\:([0-9]|[1-9]\d{1,3}|[1-5]\d{4}|6[0-5]{2}[0-3][0-5]$/";flow:established;flowbits:isset,bot;msg:"bot founded";sid:1000001;rev:1;)
